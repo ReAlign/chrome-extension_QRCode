@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <title>QRCode</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+
+<body>
+  <div style="padding: 30px;">
+    <div id="j-qrcode-container"></div>
+    <div class="m-ip" style="margin-top: 30px;">
+      <span class="u-title">外网IP: </span>
+      <span class="u-ip" id="j-open-ip-container"></span>
+      <button class="u-copy-btn" id="j-copy-open-ip-btn" data-clipboard-target="#j-open-ip-container">
+        复制
+      </button>
+    </div>
+    <div class="m-ip">
+      <span class="u-title">内网IP: </span>
+      <span class="u-ip" id="j-local-ip-container"></span>
+      <button class="u-copy-btn" id="j-copy-local-ip-btn" data-clipboard-target="#j-local-ip-container">
+        复制
+      </button>
+    </div>
+    <div class="m-ip">
+      <span class="u-title">内网ID: </span>
+      <span class="u-ip" id="j-local-id-container"></span>
+      <button class="u-copy-btn" id="j-copy-local-id-btn" data-clipboard-target="#j-local-id-container">
+        复制
+      </button>
+    </div>
+  </div>
+
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/jquery.qrcode.js"></script>
+  <script src="js/lib/qrcode.js"></script>
+  <script src="js/lib/clipboard.min.js"></script>
+
+  <script src="js/core.js"></script>
+  <script src="js/popup.js"></script>
+</body>
+
+</html>

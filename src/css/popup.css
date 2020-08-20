@@ -1,0 +1,25 @@
+.m-ip {
+    font-size: 16px;
+    margin: 8px 0 0 0;
+    text-align: center;
+}
+
+.u-ip {
+    display: inline-block;
+    width: 118px;
+    vertical-align: sub;
+    text-align: left;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.u-title {
+    color: #999;
+}
+
+.u-copy-btn {
+    width: 60px;
+    cursor: pointer;
+}
