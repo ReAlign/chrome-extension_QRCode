@@ -16,10 +16,19 @@
 }
 
 .u-title {
+    display: inline-block;
+    width: 52px;
     color: #999;
+    vertical-align: top;
+    overflow: hidden;
 }
 
 .u-copy-btn {
     width: 60px;
     cursor: pointer;
+}
+
+.u-qrcode-container {
+    width: 240px;
+    height: 240px;
 }

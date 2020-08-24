@@ -118,7 +118,7 @@ const _ = {
       })
       .on('success', (e) => {
         const _txt = jQuery(id).html();
-        jQuery(id).html('已复制');
+        jQuery(id).html(`已${_txt}`);
         setTimeout(() => {
           jQuery(id).html(_txt);
         }, 1500);
@@ -128,7 +128,7 @@ const _ = {
     const indexLH = url.indexOf('localhost');
     const index127 = url.indexOf('127.0.0.1');
     const isLocal = (indexLH === 7 || indexLH === 8 || index127 === 7 || index127 === 8);
-    if(isLocal) {
+    if (isLocal) {
       return true;
     }
 
@@ -141,5 +141,41 @@ const _ = {
         ${txt}
       </p>
     `);
+  },
+  bindShortUrlEvt(url = '') {
+    jQuery('#j-short_url-btn').click(() => {
+      _.shortUrl(url);
+    });
+  },
+  shortUrl(url = '') {
+    fetch('https://note.realign.pro/o/short_url', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x1u-token': 'fae5dc6210e0e1f8b0032485f92695e8'
+        },
+        body: JSON.stringify({
+          url,
+        })
+      })
+      .then(response => response.json())
+      .then((json = {}) => {
+        const {
+          data = {}
+        } = json;
+        const shortUrl = data.shortUrl;
+        if (shortUrl) {
+          navigator.clipboard.writeText(shortUrl).then(
+            () => {
+              // ok
+              alert('ok');
+            },
+            () => {
+             // err
+             alert('err');
+            }
+          );
+        }
+      })
   },
 };

@@ -2,15 +2,21 @@
   const {
     url,
   } = tab;
-  if (_.isLocal(url)) {
-    _.getLocalIP().then((ip = '') => {
-      const _url = _.replaceHostname(url, ip);
-      _.buildQRCode(_url);
-      _.buildLocalID(_url);
-    });
+  if(_.checkURL(url)) {
+    if (_.isLocal(url)) {
+      _.getLocalIP().then((ip = '') => {
+        const _url = _.replaceHostname(url, ip);
+        _.buildQRCode(_url);
+        _.buildLocalID(_url);
+        _.bindShortUrlEvt(_url);
+      });
+    } else {
+      _.buildQRCode(url);
+      _.buildLocalID(url);
+      _.bindShortUrlEvt(url);
+    }
   } else {
-    _.buildQRCode(url);
-    _.buildLocalID(url);
+    alert('not effective url');
   }
 
   _.buildOpenIP();
