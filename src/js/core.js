@@ -106,8 +106,7 @@ const _ = {
     });
   },
   buildLocalID(url = '') {
-    jQuery('#j-local-id-container').html(`${url}`);
-    jQuery('#j-local-id-container').attr('title', `${url}`);
+    jQuery('#j-local-id-container').val(`${url}`);
     _.copyEvt('#j-copy-local-id-btn', url);
   },
   copyEvt(id = '', txt = '') {
@@ -148,6 +147,9 @@ const _ = {
     });
   },
   shortUrl(url = '') {
+    jQuery('#j-short_url-btn').attr('disabled', true);
+    jQuery('#j-short_url-btn').html('生成中');
+
     fetch('https://note.realign.pro/o/short_url', {
         method: 'POST',
         headers: {
@@ -168,11 +170,12 @@ const _ = {
           navigator.clipboard.writeText(shortUrl).then(
             () => {
               // ok
-              alert('ok');
+              jQuery('#j-short_url-container').val(shortUrl);
+              jQuery('#j-short_url-btn').html('已复制');
             },
             () => {
              // err
-             alert('err');
+             jQuery('#j-short_url-container').html('未知错误');
             }
           );
         }
