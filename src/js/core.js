@@ -150,11 +150,11 @@ const _ = {
     jQuery('#j-short_url-btn').attr('disabled', true);
     jQuery('#j-short_url-btn').html('生成中');
 
-    fetch('https://note.realign.pro/o/short_url', {
+    fetch('https://s.realign.cn/o/short_url', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x1u-token': 'fae5dc6210e0e1f8b0032485f92695e8'
+          'short-token': 'fae5dc6210e0e1f8b0032485f92695e8'
         },
         body: JSON.stringify({
           url,
