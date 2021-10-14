@@ -150,7 +150,7 @@ const _ = {
     jQuery('#j-short_url-btn').attr('disabled', true);
     jQuery('#j-short_url-btn').html('生成中');
 
-    fetch('https://api.realign.cn/o/short_url', {
+    fetch('https://s.realign.cn/o/short_url', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
