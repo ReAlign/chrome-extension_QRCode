@@ -174,8 +174,8 @@ const _ = {
               jQuery('#j-short_url-btn').html('已复制');
             },
             () => {
-             // err
-             jQuery('#j-short_url-container').html('未知错误');
+              // err
+              jQuery('#j-short_url-container').html('未知错误');
             }
           );
         }
