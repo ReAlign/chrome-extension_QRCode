@@ -15,8 +15,6 @@
       _.buildLocalID(url);
       _.bindShortUrlEvt(url);
     }
-  } else {
-    alert('not effective url');
   }
 
   _.buildOpenIP();
